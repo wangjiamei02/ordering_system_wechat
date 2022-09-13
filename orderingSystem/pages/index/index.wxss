@@ -1,0 +1,54 @@
+.index-box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 轮播图 */
+swiper {
+  height: 26vh;
+}
+swiper-item { 
+  border-radius: 0% 0% 50% 50%;
+}
+swiper-item > image {
+  width: 100vw;
+}
+
+/* 点餐按钮 */
+.order-button button {
+color: #fff;
+    background-color: #ff9c35;
+    border-radius: 60rpx;
+    font-size: 2.6vh;
+    width: 38vw;
+    height: 5.5vh;
+    line-height: 5.5vh;
+    margin-top: 5.2vh;
+    margin-bottom: 2.2vh;
+}
+
+/* 广告大图 */
+.index-ad {
+  padding: 4vw;
+  display: flex;
+  justify-content: center;
+}
+
+.index-ad image {
+  height: 32vh;
+}
+
+/* 底部图片 */
+.index-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3vw;
+}
+
+.index-bottom image {
+  width: 45.5vw;
+  height: 16vh;
+  margin-bottom: 4vh;
+}
+

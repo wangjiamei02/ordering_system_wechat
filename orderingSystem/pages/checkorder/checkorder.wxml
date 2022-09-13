@@ -1,0 +1,36 @@
+<view class="order">
+<view class="order-box">
+  <!-- 顶部title -->
+  <view class="order-title">请确认您的订单</view>
+  <scroll-view scroll-y>
+  <!-- 中间商品列表 -->
+  <view class="order-content">
+    <view class="order-content-title">订单详情</view>
+      <view wx:for="{{orderList}}" wx:key="index" class="order-shop">
+          <view>{{item.name}}</view>
+          <view class="order-shop-right">
+              <view>x {{item.num}}</view>
+              <view>￥ {{item.price}}</view>
+          </view>
+    </view>
+    <view class="order-totalprice" >
+      <view>总计</view>
+      <view>￥ {{totalPrice}}</view>
+    </view>
+  </view>
+  <!-- 备注 -->
+  <view class="remarks">
+    <view>备注</view>
+    <textarea placeholder="如有其他要求，请输入备注"></textarea>
+  </view>  
+  </scroll-view>
+
+</view>
+  <!-- 底部支付 -->
+  <view class="list-footer">
+    <view class="list-footer-left">
+      <text>合计：￥{{totalPrice}}</text>
+    </view>
+    <view class="list-footer-right" bindtap="pay">去支付</view>
+  </view >
+</view>

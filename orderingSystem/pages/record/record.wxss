@@ -1,0 +1,55 @@
+.avatar {
+  background-color: #f7982a;
+  height: 36vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar image {
+  width: 189rpx;
+  height: 189rpx;
+  border-radius: 50%;
+  border: 4px solid #dc851f;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  height: 8vh;
+}
+
+scroll-view {
+  height: 56vh;
+  background-color: #f8f8f8;
+}
+
+.content {
+
+  /* height: 50vh; */
+}
+
+.content-item {
+  height: 14vh;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3vw;
+}
+
+.content-item-left {
+  font-size: 3vh;
+}
+
+.content-item-left >view:last-child {
+  color: #9a96a1;  
+  font-size: 2.8vh;
+}
+
+.content-item-right {
+  color: #f7982a;
+  font-weight: 600;
+}

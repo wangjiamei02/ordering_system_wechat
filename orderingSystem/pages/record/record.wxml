@@ -1,0 +1,21 @@
+<!--头像-->
+<view class="avatar">
+  <image src="{{headImg}}" />
+</view>
+<!--标题-->
+<view class="title">
+  <text>消费记录</text>
+</view>
+<!-- 消费记录 -->
+<scroll-view scroll-y>
+<view class="content">
+  <view wx:for="{{recordData.record}}" wx:key="index" class="content-item">
+    <view class="content-item-left">
+      <view>消费</view>
+      <view>{{item.date}} {{item.time}}</view>
+    </view>
+    <view class="content-item-right">￥{{item.summoney}}</view>
+  </view>
+</view>
+</scroll-view>
+

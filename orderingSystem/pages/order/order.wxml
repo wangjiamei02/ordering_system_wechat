@@ -1,0 +1,20 @@
+<!--pages/order/order.wxml-->
+<view class="list">
+<view class="content">
+  <view class="content-box" wx:for="{{orderList}}" wx:key="order_id">
+    <view class="content-left">
+      <view>下单时间：{{item.foods[0].date}} {{item.foods[0].time}}</view>
+      <view class="shop"> 
+        {{item.foods[0].name}}
+        <text>\t{{item.foods[0].describe}}</text>
+        ￥{{item.foods[0].money}}.00
+      </view>
+    </view>
+    <view class="content-right">
+      <view>查看详情</view>
+      <view class="takened" wx:if="{{item.taken}}">已取餐</view>
+      <view class="takening" wx:else>未取餐</view>
+    </view>
+  </view>
+</view>
+</view>

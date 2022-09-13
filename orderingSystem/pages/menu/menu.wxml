@@ -1,0 +1,73 @@
+<!--pages/list/list.wxml-->
+<view class="list-box">
+  <view class="list-content">
+    <view>
+      <scroll-view scroll-y>
+        <view wx:for="{{listMessage}}" wx:key="index" class="left-menu {{currentLeft === index ? 'left-menu-active' : ''}}" bindtap="leftMenu" data-list="{{index}}">
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view>
+      <scroll-view class="right-menu" scroll-y scroll-into-view="{{selectId}}">
+        <view wx:for="{{listMessage}}" wx:key="index" id="item{{index}}">
+          <view class="right-menu-toptext">{{item.name}}</view>
+          <view class="right-menu-content" wx:for="{{item.foods}}" wx:key="index">
+            <image src="{{item.image_url}}" />
+            <view class="right-menu-text">
+              <text class="right-menu-text-name">{{item.specfoods[0].name}}</text>
+              <view class="right-menu-text-num">
+                <text class="right-menu-content-price">￥{{item.specfoods[0].price}}</text>
+                <image src="/images/addicon.png" bindtap="addShop" data-shop="{{item}}" data-shopindex="{{index}}" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="list-footer-top">满25立减3元(手机点餐专享)</view>
+  <view class="list-footer">
+    <view class="list-footer-left">
+      <image wx:if="{{isCar}}" src="/images/caricon.png"  />
+      <view wx:else class="shopcar">
+        <image src="/images/selectcaricon.png" bindtap="shopList" />
+        <view>{{shopList.length}}</view>
+      </view>
+      <text wx:if="{{footerText}}">购物车是空的</text>
+      <text class="total-money" wx:else>￥{{totalPrice}}.00</text>
+    </view>
+    <view  wx:if="{{isCar}}" class="list-footer-right">选好了</view>
+    <view  wx:else class="list-footer-right-active" bindtap="checkshop">选好了</view>
+  </view >
+
+
+  <!-- 弹出层 -->
+  <view class="pop" wx:if="{{showlist}}">
+  <!-- 遮罩层 -->
+  <view class="pop-bg" bindtap="closepop"></view>
+  <view class="pop-header">
+    <view>已选商品</view>
+    <view class="clear" bindtap="clearshop">
+    <image src="/images/clear.png" />
+    清空购物车
+    </view>
+  </view>  
+  <scroll-view scroll-y class="pop-scroll">
+  <view class="pop-box">
+  <view class="pop-content" wx:for="{{shopList}}" wx:key="index">
+    <view class="pop-content-left">
+        <view>{{item.name}}</view>
+        <view>常规+常规糖+常规冰</view>
+    </view>
+    <view class="pop-content-content">￥{{item.price}}.00</view>
+    <view class="pop-content-right">
+      <image src="/images/reduce.png" bindtap="reducenum" data-index="{{index}}"/>
+      <text>{{item.num}}</text>
+      <image src="/images/addicon.png" bindtap="addnum" data-index="{{index}}"/>
+    </view>
+  </view>  
+  </view>
+</scroll-view>
+</view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+<view class="index-box">
+<!-- 顶部轮播图 -->
+  <swiper indicator-dots circular autoplay>
+    <swiper-item wx:for="{{imgUrl.imgUrls}}" wx:key="id">
+      <image mode="widthFix" src="{{item.src}}" />
+    </swiper-item>
+  </swiper>
+  <!-- 点餐按钮 -->
+  <view class="order-button" bindtap="order">
+    <button>开启点餐之旅→</button>
+  </view>
+  <view class="index-ad">
+    <image src="{{imgUrl.image_ad}}" />
+  </view>
+  <view class="index-bottom">
+    <image src="{{item.src}}" wx:for="{{imgUrl.image_bottom}}" wx:key="id" />
+  </view>
+</view>
+
+
